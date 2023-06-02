@@ -19,6 +19,4 @@ router.put(
   managerController.deactivateEmployee
 );
 
-router.post('/register', managerController.register);
-
 module.exports = router;

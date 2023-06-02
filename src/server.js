@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const employeeRoutes = require('./routes/employeeRoutes');
 const managerRoutes = require('./routes/managerRoutes');
+const userRoutes = require('./routes/userRoutes');
 require('./middleware/passportSetup');
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(passport.initialize());
 
 app.use('/api/employee', employeeRoutes);
 app.use('/api/manager', managerRoutes);
+app.use('/api/user', userRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
