@@ -1,0 +1,23 @@
+datasource db {
+  provider = "mysql"  // Change this to "mongodb" if you want to use MongoDB.
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Employee {
+  id          Int     @id @default(autoincrement())
+  name        String
+  jobTitle    String
+  contactInfo String  @unique
+  status      String  @default("active")
+  createdAt   DateTime @default(now())
+}
+
+model User {
+id          Int     @id @default(autoincrement())
+username    String  @map("user_name") @unique
+password    String
+}
