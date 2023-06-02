@@ -4,7 +4,7 @@ const passport = require('passport');
 const employeeController = require('../controllers/employeeController');
 
 router.put(
-  '/update',
+  '/update/:id',
   passport.authenticate('local', { session: false }),
   employeeController.updateInfo
 );

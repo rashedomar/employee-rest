@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 exports.updateInfo = async (req, res, next) => {
-  const { id } = req.user;
+  const id = parseInt(req.params.id);
   const { contactInfo } = req.body;
   try {
     const updatedEmployee = await prisma.employee.update({

@@ -24,7 +24,7 @@ exports.listEmployees = async (req, res, next) => {
 };
 
 exports.deactivateEmployee = async (req, res, next) => {
-  const { id } = req.params;
+  const id  = parseInt(req.params.id);
   try {
     const deactivatedEmployee = await prisma.employee.update({
       where: { id },
