@@ -64,7 +64,7 @@ Please note that all manager endpoints require HTTP Basic Authentication.
 
 ## Running Tests
 
-No tests currently exist for this project.
+run `npm test`
 
 ## Deployment
 
